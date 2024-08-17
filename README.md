@@ -4,6 +4,23 @@
 
 The Disaster Response Pipeline Project aims to build an efficient web application for classifying disaster response messages. By integrating a robust machine learning pipeline, this application ensures that incoming messages are accurately categorized and directed to the relevant disaster response agencies. This streamlined process improves the speed and effectiveness of emergency responses, helping to manage crises more effectively.
 
+## Objective
+The primary goal is to ensure that each message, whether it concerns an earthquake, fire, or any other disaster, is accurately categorized and routed to the appropriate disaster response agency. This routing helps streamline response efforts, enabling quicker and more effective action in crisis situations.
+
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Components](#components)
+   - [ETL Pipeline](#etl-pipeline)
+   - [ML Pipeline](#ml-pipeline)
+   - [Flask Web Application](#flask-web-application)
+3. [Setup Instructions](#setup-instructions)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+   - [Running the Pipelines](#running-the-pipelines)
+   - [Running the Web Application](#running-the-web-application)
+4. [File Descriptions](#file-descriptions)
+
 ## Components
 
 ### ETL Pipeline
@@ -93,6 +110,3 @@ The Flask web application serves as the interface for user interaction:
 - `data/`: Directory containing the raw datasets.
 - `app/`: Directory containing web application templates and static files.
 
-## Acknowledgements
-
-This project is part of the Udacity Data Scientist Nanodegree program. The datasets used are provided by Figure Eight.
