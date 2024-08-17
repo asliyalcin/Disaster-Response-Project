@@ -64,7 +64,7 @@ The Flask web application serves as the interface for user interaction:
 
 1. **Clone the Repository:**
     ```bash
-    git clone  [Contact](https://github.com/asliyalcin/Disaster-Response-Project/) 
+    git clone https://github.com/asliyalcin/Disaster-Response-Project
     cd your_repository
     ```
 
