@@ -1,33 +1,98 @@
-Disaster Response Pipeline Project
-Overview
-This project develops a web application to classify disaster response messages efficiently. By leveraging a machine learning pipeline, the application categorizes messages, ensuring they reach the appropriate disaster response agency in a timely manner.
+# Disaster Response Pipeline Project
 
-Components
-ETL Pipeline
-The ETL (Extract, Transform, Load) pipeline performs the following tasks:
+## Overview
 
-Load Data: Imports disaster messages and categories datasets.
-Merge Datasets: Integrates the two datasets into a unified format.
-Data Cleaning: Cleans and preprocesses the data for analysis.
-Storage: Saves the cleaned data into an SQLite database.
-ML Pipeline
-The ML (Machine Learning) pipeline handles:
+The Disaster Response Pipeline Project aims to build an efficient web application for classifying disaster response messages. By integrating a robust machine learning pipeline, this application ensures that incoming messages are accurately categorized and directed to the relevant disaster response agencies. This streamlined process improves the speed and effectiveness of emergency responses, helping to manage crises more effectively.
 
-Data Retrieval: Loads data from the SQLite database.
-Data Splitting: Divides the dataset into training and test sets.
-Model Building: Constructs a text processing and machine learning pipeline.
-Training & Tuning: Uses GridSearchCV to optimize model performance.
-Evaluation: Assesses the model on the test set.
-Exporting: Saves the trained model as a pickle file for future use.
-Flask Web Application
-The web application:
+## Components
 
-Model Integration: Loads the trained model and data from the database.
-User Interface: Provides a platform for users to input disaster messages.
-Message Classification: Categorizes messages and displays results.
-Data Visualization: Features interactive plots created with Plotly.
-Setup Instructions
-Prerequisites
-Python 3.6 or higher
-Required Libraries: pandas, numpy, sqlalchemy, nltk, scikit-learn, Flask, Plotly, pickle
-Additional dependencies listed in requirements.txt
+### ETL Pipeline
+
+The ETL (Extract, Transform, Load) pipeline processes data through the following steps:
+
+- **Load Data:** Imports disaster messages and category datasets.
+- **Merge Datasets:** Integrates both datasets into a unified format for consistency.
+- **Data Cleaning:** Cleanses and preprocesses the data to prepare it for analysis.
+- **Storage:** Saves the processed data into an SQLite database, ensuring it is ready for use in the machine learning model.
+
+### ML Pipeline
+
+The ML (Machine Learning) pipeline handles the development and evaluation of the classification model:
+
+- **Data Retrieval:** Loads the cleaned data from the SQLite database.
+- **Data Splitting:** Splits the dataset into training and test sets to evaluate model performance.
+- **Model Building:** Constructs a pipeline for text processing and machine learning.
+- **Training & Tuning:** Utilizes GridSearchCV to optimize the model's performance through hyperparameter tuning.
+- **Evaluation:** Assesses the model on the test set to ensure accuracy and reliability.
+- **Exporting:** Saves the trained model as a pickle file for future deployment and use.
+
+### Flask Web Application
+
+The Flask web application serves as the interface for user interaction:
+
+- **Model Integration:** Loads the trained model and relevant data from the database.
+- **User Interface:** Provides a user-friendly platform for inputting disaster messages.
+- **Message Classification:** Classifies input messages and displays the categorized results.
+- **Data Visualization:** Incorporates interactive visualizations using Plotly to enhance data insights and user experience.
+
+## Setup Instructions
+
+### Prerequisites
+
+- **Python 3.6 or higher**
+- **Required Libraries:** pandas, numpy, sqlalchemy, nltk, scikit-learn, Flask, Plotly, pickle
+- Additional dependencies are listed in `requirements.txt`.
+
+### Installation
+
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/your_username/your_repository.git
+    cd your_repository
+    ```
+
+2. **Install Required Libraries:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Download NLTK Data:**
+    ```bash
+    python -m nltk.downloader punkt stopwords wordnet
+    ```
+
+### Running the Pipelines
+
+- **ETL Pipeline:**
+    ```bash
+    python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db
+    ```
+
+- **ML Pipeline:**
+    ```bash
+    python train_classifier.py DisasterResponse.db classifier.pkl
+    ```
+
+### Running the Web Application
+
+1. **Start the Flask App:**
+    ```bash
+    python run.py
+    ```
+
+2. **Open in Browser:**
+    Navigate to [http://localhost:3001/](http://localhost:3001/) to access the web application.
+
+## File Descriptions
+
+- `process_data.py`: Script for processing and cleaning the data.
+- `train_classifier.py`: Script for training and saving the machine learning model.
+- `run.py`: Flask application script to run the web interface.
+- `DisasterResponse.db`: SQLite database containing the cleaned data.
+- `classifier.pkl`: Serialized machine learning model.
+- `data/`: Directory containing the raw datasets.
+- `app/`: Directory containing web application templates and static files.
+
+## Acknowledgements
+
+This project is part of the Udacity Data Scientist Nanodegree program. The datasets used are provided by Figure Eight.
