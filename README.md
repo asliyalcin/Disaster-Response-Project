@@ -60,6 +60,11 @@ The Flask web application serves as the interface for user interaction:
 - **Required Libraries:** pandas, numpy, sqlalchemy, nltk, scikit-learn, Flask, Plotly, pickle
 - Additional dependencies are listed in `requirements.txt`.
 
+
+## Project Repository
+The full project is hosted on GitHub: [Disaster Response Project](https://github.com/asliyalcin/Disaster-Response-Project)
+
+
 ### Installation
 
 1. **Clone the Repository:**
